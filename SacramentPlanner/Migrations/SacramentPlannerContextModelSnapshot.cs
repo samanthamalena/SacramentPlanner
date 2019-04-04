@@ -27,7 +27,9 @@ namespace SacramentPlanner.Migrations
 
                     b.Property<int>("CloseHymn");
 
-                    b.Property<string>("ClosePrayer");
+                    b.Property<string>("ClosePrayer")
+                        .IsRequired()
+                        .HasMaxLength(40);
 
                     b.Property<string>("Conducting");
 
@@ -37,17 +39,40 @@ namespace SacramentPlanner.Migrations
 
                     b.Property<int>("OpenHymn");
 
-                    b.Property<string>("OpenPrayer");
+                    b.Property<string>("OpenPrayer")
+                        .IsRequired()
+                        .HasMaxLength(40);
 
                     b.Property<int>("SacramentHymn");
 
-                    b.Property<string>("Speaker");
+                    b.Property<string>("Speaker")
+                        .IsRequired()
+                        .HasMaxLength(40);
 
-                    b.Property<string>("Subject");
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasMaxLength(40);
 
                     b.HasKey("Id");
 
                     b.ToTable("Sacrament");
+                });
+
+            modelBuilder.Entity("SacramentPlanner.Models.Speaker", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Speaker");
                 });
 #pragma warning restore 612, 618
         }
