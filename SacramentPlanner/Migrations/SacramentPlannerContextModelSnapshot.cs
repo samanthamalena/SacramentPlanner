@@ -64,11 +64,13 @@ namespace SacramentPlanner.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("Date");
-
                     b.Property<string>("FirstName");
 
                     b.Property<string>("LastName");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasMaxLength(40);
 
                     b.HasKey("ID");
 
