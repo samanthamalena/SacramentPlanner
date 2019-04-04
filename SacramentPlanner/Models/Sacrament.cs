@@ -15,7 +15,9 @@ namespace SacramentPlanner.Models
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
-        [RegularExpression(@"[A-Z]")]
+       // [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+       // [Required]
+       // [StringLength(50)]
         public string Conducting { get; set; }
 
         [Range(1, 341, ErrorMessage = "Please enter a valid hymn number")]
@@ -23,6 +25,8 @@ namespace SacramentPlanner.Models
         public int OpenHymn { get; set; }
 
         [RegularExpression(@"[A-Z]")]
+        [Required]
+        [StringLength(40)]
         [Display(Name = "Opening Prayer")]
         public string OpenPrayer { get; set; }
 
@@ -35,9 +39,13 @@ namespace SacramentPlanner.Models
         public int? IntermediateHymn { get; set; }
 
         [RegularExpression(@"[A-Z]")]
+        [Required]
+        [StringLength(40)]
         public string Speaker { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [RegularExpression(@"[A-Z]")]
+        [Required]
+        [StringLength(40)]
         public string Subject { get; set; }
 
         [Range(1, 341, ErrorMessage = "Please enter a valid hymn number")]
@@ -45,6 +53,8 @@ namespace SacramentPlanner.Models
         public int CloseHymn { get; set; }
 
         [RegularExpression(@"[A-Z]")]
+        [Required]
+        [StringLength(40)]
         [Display(Name = "Closing Prayer")]
         public string ClosePrayer { get; set; }
     }

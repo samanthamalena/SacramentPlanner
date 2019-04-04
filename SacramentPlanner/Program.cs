@@ -24,7 +24,7 @@ namespace SacramentPlanner
                 {
                     var context = services.GetRequiredService<SacramentPlannerContext>();
                     context.Database.Migrate();
-                    SeedData.Initialize(services);
+                    
                 }
                 catch (Exception ex)
                 {
