@@ -85,7 +85,7 @@ namespace SacramentPlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Conducting,OpenHymn,OpenPrayer,SacramentHymn,Speaker,Subject,CloseHymn,ClosePrayer")] Sacrament sacrament)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Conducting,OpenHymn,OpenPrayer,SacramentHymn,IntermediateHymn,Speaker,Subject,CloseHymn,ClosePrayer")] Sacrament sacrament)
         {
             if (id != sacrament.Id)
             {

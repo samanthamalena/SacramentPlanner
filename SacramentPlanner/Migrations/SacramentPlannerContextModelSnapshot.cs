@@ -25,7 +25,7 @@ namespace SacramentPlanner.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CloseHymn");
+                    b.Property<int>("CloseHymn");
 
                     b.Property<string>("ClosePrayer");
 
@@ -33,11 +33,13 @@ namespace SacramentPlanner.Migrations
 
                     b.Property<DateTime>("Date");
 
-                    b.Property<string>("OpenHymn");
+                    b.Property<int?>("IntermediateHymn");
+
+                    b.Property<int>("OpenHymn");
 
                     b.Property<string>("OpenPrayer");
 
-                    b.Property<string>("SacramentHymn");
+                    b.Property<int>("SacramentHymn");
 
                     b.Property<string>("Speaker");
 

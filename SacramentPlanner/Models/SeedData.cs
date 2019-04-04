@@ -24,12 +24,13 @@ namespace SacramentPlanner.Models
                     {
                         Date = DateTime.Parse("2015-5-29"),
                         Conducting = "Bishop Morris",
-                        OpenHymn = "70",
+                        OpenHymn = 70,
                         OpenPrayer= "Lynnette Warnberg",
-                        SacramentHymn = "203",
+                        SacramentHymn = 203,
+                        IntermediateHymn = null ,
                         Speaker = "Sarah Smith",
                         Subject = "Atonement",
-                        CloseHymn = "302",
+                        CloseHymn = 302,
                         ClosePrayer = "Connor Taylor"
                      },
 
@@ -37,12 +38,13 @@ namespace SacramentPlanner.Models
                     {
                         Date = DateTime.Parse("2001-2-12"),
                         Conducting = "Brother Jones",
-                        OpenHymn = "72",
+                        OpenHymn = 72,
                         OpenPrayer = "Lynnette Hemsworth",
-                        SacramentHymn = "103",
+                        SacramentHymn = 103,
+                        IntermediateHymn = null ,
                         Speaker = "Katelyn Wilson",
                         Subject = "Faith",
-                        CloseHymn = "14",
+                        CloseHymn = 14,
                         ClosePrayer = "Samantha Hancock"
                     }
 

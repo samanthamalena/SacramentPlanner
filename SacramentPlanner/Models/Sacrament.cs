@@ -15,32 +15,36 @@ namespace SacramentPlanner.Models
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [RegularExpression(@"[A-Z]")]
         public string Conducting { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [Range(1, 341, ErrorMessage = "Please enter a valid hymn number")]
         [Display(Name = "Opening Hymn")]
-        public string OpenHymn { get; set; }
+        public int OpenHymn { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [RegularExpression(@"[A-Z]")]
         [Display(Name = "Opening Prayer")]
         public string OpenPrayer { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [Range(1, 341, ErrorMessage = "Please enter a valid hymn number")]
         [Display(Name = "Sacrament Hymn")]
-        public string SacramentHymn { get; set; }
+        public int SacramentHymn { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [Range(1, 341, ErrorMessage = "Please enter a valid hymn number")]
+        [Display(Name = "Intermediate Hymn (optional)")]
+        public int? IntermediateHymn { get; set; }
+
+        [RegularExpression(@"[A-Z]")]
         public string Speaker { get; set; }
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         public string Subject { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [Range(1, 341, ErrorMessage = "Please enter a valid hymn number")]
         [Display(Name = "Closing Hymn")]
-        public string CloseHymn { get; set; }
+        public int CloseHymn { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [RegularExpression(@"[A-Z]")]
         [Display(Name = "Closing Prayer")]
         public string ClosePrayer { get; set; }
     }
