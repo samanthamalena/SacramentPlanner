@@ -53,7 +53,7 @@ namespace SacramentPlanner.Views.Speakers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,LastName,FirstName,Date")] Speaker speaker)
+        public async Task<IActionResult> Create([Bind("ID,LastName,FirstName,Subject")] Speaker speaker)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace SacramentPlanner.Views.Speakers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,LastName,FirstName,Date")] Speaker speaker)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,LastName,FirstName,Subject")] Speaker speaker)
         {
             if (id != speaker.ID)
             {

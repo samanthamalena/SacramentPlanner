@@ -24,7 +24,7 @@ namespace SacramentPlanner.Models
         [Display(Name = "Opening Hymn")]
         public int OpenHymn { get; set; }
 
-        [RegularExpression(@"[A-Z]")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [Required]
         [StringLength(40)]
         [Display(Name = "Opening Prayer")]
@@ -38,12 +38,12 @@ namespace SacramentPlanner.Models
         [Display(Name = "Intermediate Hymn (optional)")]
         public int? IntermediateHymn { get; set; }
 
-        [RegularExpression(@"[A-Z]")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [Required]
         [StringLength(40)]
         public string Speaker { get; set; }
 
-        [RegularExpression(@"[A-Z]")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [Required]
         [StringLength(40)]
         public string Subject { get; set; }
@@ -52,7 +52,7 @@ namespace SacramentPlanner.Models
         [Display(Name = "Closing Hymn")]
         public int CloseHymn { get; set; }
 
-        [RegularExpression(@"[A-Z]")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [Required]
         [StringLength(40)]
         [Display(Name = "Closing Prayer")]
