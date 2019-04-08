@@ -41,12 +41,12 @@ namespace SacramentPlanner.Models
         [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [Required]
         [StringLength(40)]
-        public string Speaker { get; set; }
+        public Speaker Speaker { get; set; }
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [Required]
         [StringLength(40)]
-        public string Subject { get; set; }
+        public Speaker Subject { get; set; }
 
         [Range(1, 341, ErrorMessage = "Please enter a valid hymn number")]
         [Display(Name = "Closing Hymn")]
