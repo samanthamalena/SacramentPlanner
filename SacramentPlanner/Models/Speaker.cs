@@ -24,12 +24,13 @@ namespace SacramentPlanner.Models
         [StringLength(40)]
         public string Subject { get; set; }
 
+        public int SacramentID { get; set; }
+        public Sacrament Sacrament { get; set; }
 
-        [InverseProperty("Speaker")]
-       public ICollection<Sacrament>Speaker { get; set; }
+        //[InverseProperty("SacramentID")]
+        //public ICollection<Sacrament>SacramentIDs { get; set; }
 
-       [InverseProperty("Subject")]
-       public ICollection<Sacrament>Subject { get; set; }
+
 
     }
 }

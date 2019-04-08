@@ -45,15 +45,7 @@ namespace SacramentPlanner.Migrations
 
                     b.Property<int>("SacramentHymn");
 
-                    b.Property<int>("SpeakerID");
-
-                    b.Property<int>("SubjectID");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("SpeakerID");
-
-                    b.HasIndex("SubjectID");
 
                     b.ToTable("Sacrament");
                 });
@@ -68,25 +60,24 @@ namespace SacramentPlanner.Migrations
 
                     b.Property<string>("LastName");
 
+                    b.Property<int>("SacramentID");
+
                     b.Property<string>("Subject")
                         .IsRequired()
                         .HasMaxLength(40);
 
                     b.HasKey("ID");
 
+                    b.HasIndex("SacramentID");
+
                     b.ToTable("Speaker");
                 });
 
-            modelBuilder.Entity("SacramentPlanner.Models.Sacrament", b =>
+            modelBuilder.Entity("SacramentPlanner.Models.Speaker", b =>
                 {
-                    b.HasOne("SacramentPlanner.Models.Speaker", "Speaker")
-                        .WithMany()
-                        .HasForeignKey("SpeakerID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("SacramentPlanner.Models.Speaker", "Subject")
-                        .WithMany()
-                        .HasForeignKey("SubjectID")
+                    b.HasOne("SacramentPlanner.Models.Sacrament", "Sacrament")
+                        .WithMany("Speakers")
+                        .HasForeignKey("SacramentID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
