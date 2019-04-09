@@ -35,8 +35,8 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Subject)
-            </th>
-            <th>*@
+            </th>*@
+            <th>
                 @Html.DisplayNameFor(model => model.CloseHymn)
             </th>
             <th>
@@ -63,12 +63,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.SacramentHymn)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Speaker)
-            </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Subject)
-            </td>*@
+                @Html.DisplayFor(modelItem => item.IntermediateHymn)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Speaker)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.CloseHymn)
             </td>
