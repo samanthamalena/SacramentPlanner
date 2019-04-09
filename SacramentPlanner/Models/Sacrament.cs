@@ -38,16 +38,6 @@ namespace SacramentPlanner.Models
         [Display(Name = "Intermediate Hymn (optional)")]
         public int? IntermediateHymn { get; set; }
 
-        //[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
-        //[Required]
-        //[StringLength(40)]
-        //public Speaker Speaker { get; set; }
-
-        //[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
-        //[Required]
-        //[StringLength(40)]
-        //public Speaker Subject { get; set; }
-
         [Range(1, 341, ErrorMessage = "Please enter a valid hymn number")]
         [Display(Name = "Closing Hymn")]
         public int CloseHymn { get; set; }

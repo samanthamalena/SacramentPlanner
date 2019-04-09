@@ -262,3 +262,4 @@ __pycache__/
 
 #Custom Ignore
 Migrations/
+Migrations/SacramentPlannerContextModelSnapshot.cs
