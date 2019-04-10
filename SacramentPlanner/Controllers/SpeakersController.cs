@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,12 @@ namespace SacramentPlanner.Controllers
         // GET: Speakers
         public async Task<IActionResult> Index(int? SacramentID)
         {
-            return View(await _context.Speaker.ToListAsync());
+            //var myVariable = { speakers: await _context.Speaker.Where(s => s.SacramentID == SacramentID).ToListAsync() };
+            //dynamic mymodel = new ExpandoObject();
+            ViewBag.Speakers = await _context.Speaker.Where(s => s.SacramentID == SacramentID).ToListAsync();
+            ViewBag.sacramentId = SacramentID;
+
+            return View();
             //google how to pass Sacrament ID to the Index of Speakers
         }
 
@@ -44,7 +50,7 @@ namespace SacramentPlanner.Controllers
         }
 
         // GET: Speakers/Create
-        public IActionResult Create()
+        public IActionResult Create(int? sacramentId)
         {
             return View();
         }

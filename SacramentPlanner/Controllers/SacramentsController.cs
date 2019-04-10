@@ -59,7 +59,8 @@ namespace SacramentPlanner.Controllers
             {
                 _context.Add(sacrament);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Speakers", sacrament.Id);
+                //return RedirectToAction("Edit", "Sacraments", new { id = sacrament.Id });
+                return RedirectToAction(nameof(Edit), new { id = sacrament.Id });
             }
             return View(sacrament);
         }
