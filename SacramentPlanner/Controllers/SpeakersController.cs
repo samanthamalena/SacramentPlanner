@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SacramentPlanner.Models;
 
-namespace SacramentPlanner.Views.Speakers
+namespace SacramentPlanner.Controllers
 {
     public class SpeakersController : Controller
     {
@@ -19,9 +19,10 @@ namespace SacramentPlanner.Views.Speakers
         }
 
         // GET: Speakers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? SacramentID)
         {
             return View(await _context.Speaker.ToListAsync());
+            //google how to pass Sacrament ID to the Index of Speakers
         }
 
         // GET: Speakers/Details/5
